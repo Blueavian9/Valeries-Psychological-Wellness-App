@@ -45,4 +45,11 @@
     "deploy": "wrangler deploy"
   },
   "type": "module"
+},
+"quality": {
+  "checks": [
+    { "name": "check_local", "cmd": "npm run check:local" }, 
+    { "name": "check_cf", "cmd": "npm run check:cf" }
+  ]
 }
+
