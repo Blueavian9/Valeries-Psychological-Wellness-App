@@ -1,10 +1,14 @@
 import { Hono } from "hono";
-import type { Env } from "../types/env.js";
+import type { Env } from "../types/env";
 
 const healthRouter = new Hono<{ Bindings: Env }>();
 
 healthRouter.get("/health", (c) => {
-  return c.json({ ok: true, service: "valerie-psych-booking", ts: Date.now() });
+  return c.json({
+    ok: true,
+    service: "valerie-psych-booking",
+    ts: Date.now()
+  });
 });
 
 export default healthRouter;
