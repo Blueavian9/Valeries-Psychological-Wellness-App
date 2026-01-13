@@ -35,13 +35,20 @@
 	},
 	"private": true,
 	"scripts": {
-		"build": "tsc -b && vite build",
-		"cf-typegen": "wrangler types",
-		"check": "tsc && vite build && wrangler deploy --dry-run",
-		"deploy": "wrangler deploy",
-		"dev": "vite",
-		"lint": "eslint .",
-		"preview": "npm run build && vite preview"
-	},
+  "dev": "vite",
+  "build": "tsc -b && vite build",
+  "preview": "npm run build && vite preview",
+
+  "lint": "eslint .",
+  "typecheck": "tsc -b --pretty false",
+
+  "cf-typegen": "wrangler types",
+
+  "check:local": "npm run typecheck && npm run lint && vite build",
+  "check:cf": "wrangler deploy --dry-run",
+  "check": "npm run check:local && npm run check:cf",
+
+  "deploy": "wrangler deploy"
+},
 	"type": "module"
 }
