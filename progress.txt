@@ -2,3 +2,4 @@
 - Initialized.
 - E1-S1 complete: added migrations/0001_initial.sql; applied locally; verified tables (appointments, audit_logs, availability, practitioners).
 - E1-S1 complete: created migrations/0001_initial.sql (practitioners, availability, appointments, audit_logs + indexes). Applied locally and verified tables.
+- E1-S2 complete: added audit logging helper (src/server/db/audit.ts). Best-effort DB insert into audit_logs with safe metadata JSON.
