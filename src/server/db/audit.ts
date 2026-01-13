@@ -82,7 +82,7 @@ export async function writeAuditLog(
 
   try {
     await stmt.run();
-  } catch (err) {
+  } catch (_err) {
     // Intentionally swallow errors: audit logging should be best-effort.
     // If you want visibility later, you can console.warn here.
     // console.warn("writeAuditLog failed", err);
