@@ -140,7 +140,8 @@
         "metadata_json must be safe/minimal"
       ],
       "notes": [
-        "E1-S2 passing: audit helper present and lint clean (catch without variable)."
+        "E1-S2 passing: audit helper present and lint clean (catch without variable).",
+        "E1-S2 passing: audit helper present; npm run check:local passes (warnings only in worker-configuration.d.ts)."
       ]
     },
     {
