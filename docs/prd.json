@@ -11,12 +11,12 @@
       "validateLocallyFirst": true
     }
   },
-  "quality": {
-    "checks": [
-      { "name": "typecheck", "cmd": "npm run check" },
-      { "name": "lint", "cmd": "npm run lint" }
-    ]
-  },
+ "quality": {
+  "checks": [
+    { "name": "check_local", "cmd": "npm run check:local" },
+    { "name": "check_cf", "cmd": "npm run check:cf" }
+  ]
+},
   "stories": [
     {
       "id": "E0-S1",
