@@ -1,4 +1,4 @@
-# Holistic Psychology Booking Platform 
+
 # PRD.md Holistic Psychology Booking Platform
 
 1. Product Overview
@@ -340,3 +340,4 @@ Junior developers should complete EPICS sequentially
 # Rule:
 Never jump to the final line.
 Always confirm the state before and after.
+
