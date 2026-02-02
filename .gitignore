@@ -12,6 +12,11 @@ desktop.ini
 *.sublime-project
 *.sublime-workspace
 
+# Build artifacts
+.wrangler/
+dist/
+node_modules/
+
 # Logs
 *.log
 npm-debug.log*
