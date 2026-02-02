@@ -36,7 +36,7 @@ This website helps users find the perfect online therapy platform by providing:
 ## 📂 Project Structure
 
 ```
-Valeries-Psychological-Wellness-App/
+Valeries-Psychological-Wellness/
 ├── index.html          # Main HTML file
 ├── css/
 │   └── styles.css      # All styles
@@ -62,7 +62,7 @@ Valeries-Psychological-Wellness-App/
 
 2. Open the project folder
    ```bash
-   cd Valeries-Psychological-Wellness-App
+   cd Valeries-Psychological-Wellness
    ```
 
 3. Open `index.html` in your browser
@@ -77,7 +77,7 @@ Valeries-Psychological-Wellness-App/
 **Option 1: Via Vercel Website (Easiest)**
 1. Go to [vercel.com](https://vercel.com) and sign up/login (use GitHub account)
 2. Click "Add New Project"
-3. Import your GitHub repository: `Valeries-Psychological-Wellness-App`
+3. Import your GitHub repository: `Valeries-Psychological-Wellness`
 4. Vercel will auto-detect it as a static site
 5. Click "Deploy" (no build settings needed)
 6. Your site will be live in ~30 seconds!

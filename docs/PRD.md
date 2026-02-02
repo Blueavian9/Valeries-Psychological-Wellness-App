@@ -599,11 +599,11 @@ filterButtons.forEach(button => {
 
 ## 📞 Project Information
 
-**Project Owner:** [Your Name]  
-**Developer:** [Your Name]  
+**Project Owner:** [Valerie Munoz]  
+**Developer:** [Cesar A. Aguilar]  
 **Launch Target:** February 15, 2026  
-**Domain:** [your-domain.com]  
-**Repository:** [github.com/yourusername/therapy-platforms]
+**Domain:** [valeriemunozpsyc.com]  
+**Repository:** [git@github.com:Blueavian9/Valeries-Psychological-Wellness-App.git]
 
 ---
 
