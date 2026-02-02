@@ -43,10 +43,10 @@ Valeries-Psychological-Wellness-App/
 ├── js/
 │   └── script.js       # Interactive features
 ├── images/
-│   └── (platform icons)
+│   └── (platform icons - add as needed)
 ├── docs/
 │   ├── PRD.md          # Product Requirements Document
-│   └── setup.md        # Setup documentation
+│   └── PRD_GUIDE.md    # Implementation Guide
 ├── README.md           # This file
 └── .gitignore          # Git ignore file
 ```
@@ -66,8 +66,9 @@ Valeries-Psychological-Wellness-App/
    ```
 
 3. Open `index.html` in your browser
-   - Or use Live Server extension in VS Code
-   - Or run: `python -m http.server 8000`
+   - Simply double-click `index.html` to open in your default browser
+   - Or use Live Server extension in VS Code/Cursor
+   - Or run a local server: `python -m http.server 8000` (then visit http://localhost:8000)
 
 ### Deployment
 
