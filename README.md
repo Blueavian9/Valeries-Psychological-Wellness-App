@@ -72,9 +72,35 @@ Valeries-Psychological-Wellness-App/
 
 ### Deployment
 
-This site can be deployed on:
-- **Vercel**: Connect GitHub repo, automatic deployment
-- **GitHub Pages**: Enable in repository settings
+#### Deploy to Vercel (Recommended)
+
+**Option 1: Via Vercel Website (Easiest)**
+1. Go to [vercel.com](https://vercel.com) and sign up/login (use GitHub account)
+2. Click "Add New Project"
+3. Import your GitHub repository: `Valeries-Psychological-Wellness-App`
+4. Vercel will auto-detect it as a static site
+5. Click "Deploy" (no build settings needed)
+6. Your site will be live in ~30 seconds!
+
+**Option 2: Via Vercel CLI**
+```bash
+# Install Vercel CLI globally
+npm i -g vercel
+
+# Deploy (from project root)
+vercel
+
+# For production deployment
+vercel --prod
+```
+
+**After Deployment:**
+- Vercel provides a URL like: `your-project.vercel.app`
+- You can add a custom domain in Vercel dashboard → Settings → Domains
+- Every push to `main` branch auto-deploys (if connected via GitHub)
+
+#### Other Deployment Options
+- **GitHub Pages**: Enable in repository settings → Pages → Select main branch
 - **Netlify**: Drag and drop or connect repo
 
 ## ✨ Features
