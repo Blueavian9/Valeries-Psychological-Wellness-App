@@ -1,4 +1,4 @@
-Holistic Online Therapy Booking Platform
+## valeries psychological wellness: Holistic Online Therapy Booking Platform
 
 ---
 
@@ -89,8 +89,8 @@ Holistic Online Therapy Booking Platform
 - **No frameworks** (keeping it lightweight and scalable)
 
 **Hosting & Deployment:**
-- Platform: Vercel
-- Domain: [your-chosen-domain.com]
+- Platform: Vercel: [https://vercel.com/blueavian9s-projects/valeries-psychological-wellness]
+- Domain: [valeriemunozpsyc.com]
 - SSL Certificate: Yes (automatic)
 - CDN: Vercel Edge Network
 

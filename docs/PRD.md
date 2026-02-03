@@ -1,45 +1,9 @@
 
 
 
-# Product Requirements Document (PRD) ## MindFlow Therapy - Holistic Online Therapy Booking Platform --- ## 📋 Document Information **Version:** 1.0 **Last Updated:** February 2, 2026 **Project Owner:** [Your Name] **Status:** In Development **Project Type:** Therapy Booking Pl
+# Product Requirements Document (PRD) 
+## Online Holistic Therapy Booking Platform --- ## 📋 Document Information **Version:** 1.0 **Last Updated:** February 2, 2026 **Project Owner:** [Cesar A. Aguilar] **Status:** In Development **Project Type:** Online Holistic Therapy Booking Platform
 
-pasted
-
-
-
-therapy-platform-PRD (2).md
-md
-
-
-
-
-How can I help you today?
-
-
-Upgrade to connect your tools to Claude
-
- icon
- icon
- icon
-
-therapy-platform-PRD (2).md
-17.23 KB•599 lines
-Formatting may be inconsistent from source
-
-# Product Requirements Document (PRD)
-## Top Online Therapy Booking Platforms 2026 - Frontend Website
-
----
-
-## 📋 Document Information
-
-**Version:** 1.0  
-**Last Updated:** February 2, 2026  
-**Project Owner:** [Your Name]  
-**Status:** In Progress  
-**Project Type:** Informational Website / Comparison Platform
-
----
 
 ## 🎯 Executive Summary
 
@@ -72,8 +36,8 @@ A modern, responsive website showcasing and comparing the top 7 online therapy b
 - No frameworks required (keeping it lightweight)
 
 **Hosting & Deployment:**
-- Platform: Vercel
-- Domain: [your-chosen-domain.com]
+- Platform: Vercel: [https://vercel.com/blueavian9s-projects/valeries-psychological-wellness-app]
+- Domain: [valeriemunozpsyc.com]
 - SSL Certificate: Yes (automatic via Vercel)
 
 **Performance Requirements:**
@@ -603,7 +567,7 @@ filterButtons.forEach(button => {
 **Developer:** [Cesar A. Aguilar]  
 **Launch Target:** February 15, 2026  
 **Domain:** [valeriemunozpsyc.com]  
-**Repository:** [git@github.com:Blueavian9/Valeries-Psychological-Wellness-App.git]
+**Repository:** [git@github.com:Blueavian9/valeries-psychological-wellness.git]
 
 ---
 
