@@ -1,224 +1,158 @@
-# Your Next Steps - Action Plan
-## React Migration: Week 1-2 Focus
-
-**Current Status:** ✅ Foundation Complete  
-**Next Milestone:** Layout Components (Header, Footer, Router)  
-**Timeline:** 2-3 days
+# Your Next Steps - Simplified Action Plan
+**Based on PRD + Current Progress**
 
 ---
 
-## 🎯 Today's Goal: Start EPIC 2
+## 🎯 Where You Are Now
 
-### Step 1: Create Layout Wrapper (30 min)
+✅ **Done:**
+- React project created
+- Tailwind configured
+- Button, Card, Badge components working
+- Project structure set up
 
-**File to create:** `therapy-platform-react/src/components/layout/Layout.jsx`
+🚧 **Next:**
+- Install missing dependencies
+- Build Layout components (Header, Footer)
+- Setup React Router
 
-**What it does:**
-- Wraps all pages with Header and Footer
-- Provides consistent page structure
-- Handles scroll-to-top on route changes
+---
+
+## 📦 Step 1: Install Missing Dependencies (15 min)
+
+```bash
+cd therapy-platform-react
+
+# Install all missing packages
+npm install @tanstack/react-query react-hook-form zod @hookform/resolvers framer-motion date-fns
+
+# Optional: Dev tools
+npm install -D prettier vitest @testing-library/react @testing-library/jest-dom
+```
+
+**Why:** These are needed for forms, animations, data fetching, and testing later.
+
+---
+
+## 🏗️ Step 2: Build Layout Wrapper (30 min)
+
+**File:** `src/components/layout/Layout.jsx`
+
+**What to build:**
+```jsx
+// Basic structure
+export function Layout({ children }) {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">{children}</main>
+      <Footer />
+    </div>
+  )
+}
+```
 
 **Ask me:** "Help me create the Layout component"
 
 ---
 
-### Step 2: Create Header Component (2-3 hours)
+## 🧭 Step 3: Build Header Component (2-3 hours)
 
-**File to create:** `therapy-platform-react/src/components/layout/Header.jsx`
+**File:** `src/components/layout/Header.jsx`
 
 **What you need:**
-1. Extract navigation from your HTML `index.html`
+1. Extract from your HTML: `<header class="header">...</header>`
 2. Convert to React component
-3. Add mobile menu (hamburger)
+3. Add mobile menu (need shadcn Sheet component)
+4. Add dark mode toggle
+5. Make it sticky
 
-**From your HTML:**
-```html
-<header class="header">
-  <nav class="nav container">
-    <div class="logo">...</div>
-    <ul class="nav-menu">...</ul>
-    <button class="menu-toggle">...</button>
-  </nav>
-</header>
-```
-
-**What to do:**
-1. Install shadcn Sheet for mobile menu:
+**Steps:**
+1. First, install Sheet component:
    ```bash
-   cd therapy-platform-react
    npx shadcn-ui@latest add sheet
    ```
+2. Then ask me: "Help me convert my HTML header to React"
 
-2. Create Header component
-3. Add navigation links
-4. Add mobile menu toggle
-5. Add dark mode toggle (from your HTML)
-
-**Ask me:** "Help me convert my HTML header to React"
+**Reference:** Your current HTML header structure
 
 ---
 
-### Step 3: Create Footer Component (1-2 hours)
+## 📄 Step 4: Build Footer Component (1-2 hours)
 
-**File to create:** `therapy-platform-react/src/components/layout/Footer.jsx`
+**File:** `src/components/layout/Footer.jsx`
 
 **What you need:**
-1. Extract footer from your HTML
+1. Extract from your HTML: `<footer class="footer">...</footer>`
 2. Convert to React component
-3. Add social media icons (using lucide-react)
-
-**From your HTML:**
-```html
-<footer class="footer">
-  <div class="footer-content">...</div>
-  <div class="footer-bottom">...</div>
-</footer>
-```
-
-**What to do:**
-1. Create Footer component
-2. Add footer sections (About, Links, Legal)
-3. Add social icons
+3. Add social icons (using lucide-react)
 4. Make responsive
 
 **Ask me:** "Help me convert my HTML footer to React"
 
 ---
 
-### Step 4: Setup React Router (1 hour)
+## 🛣️ Step 5: Setup React Router (1 hour)
 
-**File to update:** `therapy-platform-react/src/App.jsx`
+**File:** `src/App.jsx`
 
 **What to do:**
-1. Install React Router (already done ✅)
-2. Setup routes:
-   - `/` → HomePage
-   - `/platforms` → PlatformsPage
-   - `/about` → AboutPage
-   - `/contact` → ContactPage
-3. Wrap with Layout component
+1. Wrap app with BrowserRouter
+2. Create routes for all pages
+3. Use Layout component
 4. Create placeholder pages
 
 **Ask me:** "Help me set up React Router with my routes"
 
 ---
 
-## 📅 This Week's Schedule
+## ✅ After These Steps, You'll Have:
 
-### Monday (Today)
-- [ ] ✅ Review PRD (you're doing this now!)
-- [ ] Create Layout wrapper component
-- [ ] Start Header component
+- ✅ Complete layout structure
+- ✅ Navigation working
+- ✅ Routing set up
+- ✅ Ready to build page sections
 
-### Tuesday
-- [ ] Complete Header component
-- [ ] Add mobile menu
-- [ ] Test navigation
-
-### Wednesday
-- [ ] Create Footer component
-- [ ] Setup React Router
-- [ ] Create placeholder pages
-- [ ] Test full layout
-
-### Thursday-Friday
-- [ ] Start EPIC 3 (remaining UI components)
-- [ ] Create FeatureCard component
-- [ ] Create PlatformCard component
+**Then move to:** EPIC 4 - Home Page Sections (Hero, Features, etc.)
 
 ---
 
-## 🛠️ Commands You'll Need
+## 🆘 When You Get Stuck
 
-```bash
-# Navigate to React project
-cd therapy-platform-react
+**For each step, ask me:**
+- "Help me build [component name]"
+- "How do I convert this HTML to React?"
+- "I'm getting this error: [error message]"
 
-# Install shadcn Sheet component (for mobile menu)
-npx shadcn-ui@latest add sheet
-
-# Start dev server
-npm run dev
-
-# Check what's running
-# Should see: http://localhost:5173
-```
+**I'll provide:**
+- Complete code examples
+- Step-by-step instructions
+- Debugging help
+- Best practices
 
 ---
 
-## 💡 How to Ask for Help
+## 📅 Suggested Timeline
 
-### When Creating Layout Component:
-```
-"Help me create a Layout component that wraps pages with Header and Footer"
-```
+- **Today:** Install dependencies + Layout wrapper
+- **Tomorrow:** Header component
+- **Day 3:** Footer + Router setup
+- **Day 4:** Start Hero section (EPIC 4)
 
-### When Creating Header:
-```
-"Help me convert this HTML header to React:
-[paste your HTML header code]"
-```
-
-### When Creating Footer:
-```
-"Help me convert this HTML footer to React:
-[paste your HTML footer code]"
-```
-
-### When Setting Up Router:
-```
-"Help me set up React Router with these routes:
-- Home (/)
-- Platforms (/platforms)
-- About (/about)
-- Contact (/contact)"
-```
+**Total:** 3-4 days to complete EPIC 2
 
 ---
 
-## ✅ Success Criteria for EPIC 2
+## 🎯 Your Goal This Week
 
-You'll know EPIC 2 is complete when:
+**Complete EPIC 2** so you have:
+- Working navigation
+- Layout structure
+- Routing
+- Ready to build content sections
 
-- [ ] Layout component wraps all pages
-- [ ] Header shows on all pages
-- [ ] Footer shows on all pages
-- [ ] Navigation links work
-- [ ] Mobile menu opens/closes
-- [ ] Can navigate between pages
-- [ ] Pages scroll to top on route change
-- [ ] Responsive on mobile/tablet/desktop
+**Then:** Start migrating your Hero section from HTML!
 
 ---
 
-## 🎯 After EPIC 2 Complete
-
-**Next:** EPIC 4 - Home Page Sections
-- Hero section
-- Features section
-- Platform comparison
-- Testimonials
-
-**But first:** Complete EPIC 3 (remaining UI components) if needed
-
----
-
-## 📝 Quick Checklist
-
-Before starting EPIC 2, make sure:
-- [x] React project is running (`npm run dev`)
-- [x] You can see the test page at localhost:5173
-- [x] You understand the component structure
-- [x] You know where to create new files
-
-**Ready?** Let's start with the Layout component! 🚀
-
----
-
-**Remember:** 
-- One component at a time
-- Test after each component
-- Ask for help when stuck
-- Compare with HTML version
-
-**You've got this!** 💪
+**Ready to start?** Say: "Let's build the Layout component" or "Help me install the missing dependencies"
