@@ -5,19 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Compare the best online therapy platforms of 2026. Find affordable, insurance-friendly options like BetterHelp, Talkspace, Brightside, and more. Expert reviews updated for 2026.">
+    content="Discover holistic therapy services - an integrative, whole-person approach to mental and physical health. Compare top online therapy platforms that treat mind, body, and spirit together. Find your perfect holistic therapy match.">
   <meta name="keywords"
-    content="online therapy, teletherapy, mental health, therapy platforms, BetterHelp, Talkspace, Brightside Health">
+    content="holistic therapy, holistic psychology, whole-person therapy, integrative therapy, online therapy, teletherapy, mental health, mind body spirit, yoga therapy, meditation therapy, wellness therapy">
   <meta name="author" content="Valerie's Psychological Wellness">
 
   <!-- Open Graph / Social Sharing -->
-  <meta property="og:title" content="Top 7 Online Therapy Platforms 2026 | Compare & Find Your Match">
+  <meta property="og:title" content="Holistic Therapy Services | Whole-Person Mental Health Care">
   <meta property="og:description"
-    content="Compare the best online therapy platforms of 2026. Find affordable, insurance-friendly options like BetterHelp, Talkspace, and more.">
+    content="Discover holistic therapy - an integrative approach treating mind, body, and spirit together. Compare top online therapy platforms offering yoga, meditation, and traditional psychotherapy.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="/images/og-therapy-platforms.jpg">
 
-  <title>Top 7 Online Therapy Platforms 2026 | Compare & Find Your Perfect Match</title>
+  <title>Holistic Therapy Services | Whole-Person Mental Health & Wellness</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
   <header class="header">
     <nav class="nav container">
       <div class="logo">
-        <a href="#home">Valerie Munoz Hollistic Psychology</a>
+        <a href="#home">Holistic Therapy Services</a>
       </div>
       <ul class="nav-menu" id="navMenu">
         <li><a href="#home" class="nav-link">Home</a></li>
@@ -43,11 +43,17 @@
         <li><a href="#faq" class="nav-link">FAQ</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-actions">
+        <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
+          <span class="dark-mode-icon">🌙</span>
+          <span class="light-mode-icon">☀️</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -55,10 +61,50 @@
   <main>
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="container">
-        <h1 class="hero-title">Find the Best Holistic Online Therapy Booking Platform</h1>
-        <p class="hero-subtitle">Compare the top 7 online therapy services of 2026 - discover integrative, whole-person approaches that treat mind, body, and spirit together</p>
-        <a href="#platforms" class="btn btn-primary">Book Now</a>
+      <!-- Background Slideshow -->
+      <!-- Replace the image URLs below with your own images in the images/ folder -->
+      <!-- Example: src="images/hero-slide-1.jpg" -->
+      <div class="hero-slideshow">
+        <div class="hero-slide fade active">
+          <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1920&q=80" alt="Peaceful meditation scene" class="hero-slide-img">
+          <div class="hero-slide-overlay"></div>
+        </div>
+        <div class="hero-slide fade">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1920&q=80" alt="Yoga and wellness" class="hero-slide-img">
+          <div class="hero-slide-overlay"></div>
+        </div>
+        <div class="hero-slide fade">
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&q=80" alt="Nature and tranquility" class="hero-slide-img">
+          <div class="hero-slide-overlay"></div>
+        </div>
+        <div class="hero-slide fade">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80" alt="Mindfulness and balance" class="hero-slide-img">
+          <div class="hero-slide-overlay"></div>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <a class="hero-prev" onclick="plusHeroSlides(-1)" aria-label="Previous slide">❮</a>
+      <a class="hero-next" onclick="plusHeroSlides(1)" aria-label="Next slide">❯</a>
+
+      <!-- Slide Indicators -->
+      <div class="hero-dots">
+        <span class="hero-dot active" onclick="currentHeroSlide(1)"></span>
+        <span class="hero-dot" onclick="currentHeroSlide(2)"></span>
+        <span class="hero-dot" onclick="currentHeroSlide(3)"></span>
+        <span class="hero-dot" onclick="currentHeroSlide(4)"></span>
+      </div>
+
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <div class="container">
+          <h1 class="hero-title">Holistic Therapy: Healing Mind, Body & Spirit Together</h1>
+          <p class="hero-subtitle">Experience integrative, whole-person mental health care that treats you as a complete being. Combining traditional psychotherapy with yoga, meditation, nutrition, and complementary techniques to achieve true balance and wellness.</p>
+          <div class="hero-cta-group">
+            <a href="#holistic-therapy" class="btn btn-primary">Learn About Holistic Therapy</a>
+            <a href="#platforms" class="btn btn-secondary">Compare Platforms</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -93,10 +139,15 @@
 
         <div class="holistic-intro">
           <p class="holistic-description">
-            Holistic therapy services represent an integrative, "whole-person" approach to mental and physical health 
-            that treats the mind, body, and spirit as interconnected, rather than focusing solely on symptoms. By combining 
-            traditional psychotherapy with complementary techniques like yoga, meditation, nutrition, and massage, it aims 
+            <strong>Holistic therapy services</strong> represent an integrative, "whole-person" approach to mental and physical health 
+            that treats the <strong>mind, body, and spirit as interconnected</strong>, rather than focusing solely on symptoms. By combining 
+            traditional psychotherapy with complementary techniques like <strong>yoga, meditation, nutrition, and massage</strong>, it aims 
             to foster balance, reduce stress, and improve overall well-being.
+          </p>
+          <p class="holistic-description" style="margin-top: 1.5rem;">
+            Unlike traditional therapy that may focus only on psychological symptoms, holistic therapy recognizes that mental health challenges 
+            are deeply connected to physical health, lifestyle choices, environmental factors, and spiritual well-being. This comprehensive 
+            approach seeks to find and address the <strong>root cause of issues</strong>, creating lasting healing and transformation.
           </p>
         </div>
 
@@ -138,10 +189,95 @@
           </div>
         </div>
 
+        <div class="holistic-techniques">
+          <h3 class="techniques-title">Common Holistic Therapy Techniques</h3>
+          <div class="techniques-grid">
+            <div class="technique-item">
+              <span class="technique-icon">🧘</span>
+              <h4>Mindfulness & Meditation</h4>
+              <p>Practice present-moment awareness to reduce stress and improve mental clarity</p>
+            </div>
+            <div class="technique-item">
+              <span class="technique-icon">🧘‍♀️</span>
+              <h4>Yoga & Movement</h4>
+              <p>Integrate physical movement to release tension and connect body and mind</p>
+            </div>
+            <div class="technique-item">
+              <span class="technique-icon">🌿</span>
+              <h4>Nutritional Counseling</h4>
+              <p>Address how diet affects mood, energy, and mental health</p>
+            </div>
+            <div class="technique-item">
+              <span class="technique-icon">💆</span>
+              <h4>Massage & Bodywork</h4>
+              <p>Release physical tension that may be connected to emotional stress</p>
+            </div>
+            <div class="technique-item">
+              <span class="technique-icon">🎯</span>
+              <h4>Acupuncture</h4>
+              <p>Balance energy flow to support both physical and emotional healing</p>
+            </div>
+            <div class="technique-item">
+              <span class="technique-icon">🫁</span>
+              <h4>Breathwork</h4>
+              <p>Use conscious breathing techniques to regulate nervous system and emotions</p>
+            </div>
+            <div class="technique-item">
+              <span class="technique-icon">🖼️</span>
+              <h4>Guided Imagery</h4>
+              <p>Harness the power of visualization for healing and stress reduction</p>
+            </div>
+            <div class="technique-item">
+              <span class="technique-icon">💬</span>
+              <h4>Traditional Talk Therapy</h4>
+              <p>Combine with evidence-based psychotherapy approaches for comprehensive care</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="holistic-benefits">
+          <h3 class="benefits-title">Who Can Benefit from Holistic Therapy?</h3>
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Anxiety and stress management</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Depression and mood disorders</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Trauma and PTSD recovery</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Addiction and substance use recovery</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Chronic pain and physical health issues</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Relationship and communication challenges</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Life transitions and personal growth</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Overall wellness and prevention</span>
+            </div>
+          </div>
+        </div>
+
         <div class="holistic-note">
           <p>
-            <strong>Note:</strong> Holistic therapy is often used alongside conventional medicine to enhance treatment outcomes, 
-            providing a comprehensive approach to healing that addresses all aspects of your well-being.
+            <strong>Important:</strong> Holistic therapy is often used <strong>alongside conventional medicine</strong> to enhance treatment outcomes, 
+            providing a comprehensive approach to healing that addresses all aspects of your well-being. The goal is to achieve a 
+            <strong>balanced, healthy, and "whole" state of being</strong> by recognizing the interconnectedness of your physical, emotional, and spiritual health.
           </p>
         </div>
       </div>
@@ -151,7 +287,7 @@
     <section id="platforms" class="platforms">
       <div class="container">
         <h2 class="section-title">Top 7 Online Therapy Platforms</h2>
-        <p class="section-subtitle">Compare features, pricing, and specialties to find your perfect Therapist.</p>
+        <p class="section-subtitle">Compare features, pricing, and specialties to find your perfect holistic therapy match. Many platforms now offer integrative approaches combining traditional therapy with wellness tools.</p>
 
         <div class="platforms-grid">
           <!-- Platform Card 1: BetterHelp -->
@@ -285,24 +421,41 @@
         <div class="faq-list">
           <div class="faq-item">
             <div class="faq-question">
-              <h3>How does online therapy work?</h3>
+              <h3>What makes holistic therapy different from traditional therapy?</h3>
               <span class="faq-icon">+</span>
             </div>
             <div class="faq-answer">
-              <p>Online therapy connects you with licensed therapists via video, phone, or text. You can schedule
-                sessions or message your therapist based on the platform's features. Most platforms offer flexible
-                scheduling and various communication options.</p>
+              <p>Holistic therapy takes a whole-person approach, treating mind, body, and spirit as interconnected. While traditional therapy focuses primarily on psychological symptoms, holistic therapy addresses physical health, lifestyle, environment, and spiritual well-being. It combines traditional talk therapy with complementary techniques like yoga, meditation, nutrition counseling, and bodywork to find and address root causes rather than just symptoms.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <div class="faq-question">
-              <h3>Is online therapy as effective as in-person?</h3>
+              <h3>How does online holistic therapy work?</h3>
               <span class="faq-icon">+</span>
             </div>
             <div class="faq-answer">
-              <p>Research shows online therapy is just as effective as in-person for many conditions, including
-                depression, anxiety, and PTSD. The key is finding a licensed therapist you connect with.</p>
+              <p>Online holistic therapy connects you with licensed therapists who incorporate whole-person approaches via video, phone, or text. Many platforms offer guided meditation, yoga sessions, wellness resources, and traditional therapy combined. You can schedule sessions and access holistic wellness tools through the platform's features. Most platforms offer flexible scheduling and various communication options.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is holistic therapy as effective as traditional therapy?</h3>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Research shows that holistic approaches can be highly effective, especially when combined with traditional therapy. Studies indicate that practices like mindfulness, yoga, and meditation can significantly reduce symptoms of anxiety, depression, and PTSD. Many therapists now integrate holistic techniques because they address the whole person - mind, body, and spirit - leading to more comprehensive and lasting healing.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I use holistic therapy alongside conventional medicine?</h3>
+              <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! Holistic therapy is designed to complement conventional medicine, not replace it. Many people use holistic approaches alongside medication, medical treatments, and traditional therapy to enhance outcomes. It's important to inform all your healthcare providers about all treatments you're receiving to ensure coordinated, safe care.</p>
             </div>
           </div>
 
