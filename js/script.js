@@ -223,6 +223,136 @@ platformCards.forEach(card => {
 });
 
 // ============================================
+// Hero Slideshow
+// ============================================
+let heroSlideIndex = 1;
+let heroAutoSlideInterval;
+
+// Initialize slideshow
+function initHeroSlideshow() {
+  showHeroSlides(heroSlideIndex);
+  
+  // Auto-advance slides every 5 seconds
+  heroAutoSlideInterval = setInterval(() => {
+    plusHeroSlides(1);
+  }, 5000);
+}
+
+function plusHeroSlides(n) {
+  showHeroSlides(heroSlideIndex += n);
+  // Reset auto-slide timer
+  resetHeroAutoSlide();
+}
+
+function currentHeroSlide(n) {
+  showHeroSlides(heroSlideIndex = n);
+  // Reset auto-slide timer
+  resetHeroAutoSlide();
+}
+
+function showHeroSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName('hero-slide');
+  const dots = document.getElementsByClassName('hero-dot');
+  
+  if (n > slides.length) { heroSlideIndex = 1; }
+  if (n < 1) { heroSlideIndex = slides.length; }
+  
+  // Hide all slides
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.remove('active');
+  }
+  
+  // Remove active class from all dots
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove('active');
+  }
+  
+  // Show current slide and activate corresponding dot
+  if (slides[heroSlideIndex - 1]) {
+    slides[heroSlideIndex - 1].classList.add('active');
+  }
+  if (dots[heroSlideIndex - 1]) {
+    dots[heroSlideIndex - 1].classList.add('active');
+  }
+}
+
+function resetHeroAutoSlide() {
+  clearInterval(heroAutoSlideInterval);
+  heroAutoSlideInterval = setInterval(() => {
+    plusHeroSlides(1);
+  }, 5000);
+}
+
+// Pause slideshow on hover
+const heroSection = document.querySelector('.hero');
+if (heroSection) {
+  heroSection.addEventListener('mouseenter', () => {
+    clearInterval(heroAutoSlideInterval);
+  });
+  
+  heroSection.addEventListener('mouseleave', () => {
+    resetHeroAutoSlide();
+  });
+  
+  // Touch swipe support for mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  heroSection.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+  
+  heroSection.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+  
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    if (touchEndX < touchStartX - swipeThreshold) {
+      // Swipe left - next slide
+      plusHeroSlides(1);
+    }
+    if (touchEndX > touchStartX + swipeThreshold) {
+      // Swipe right - previous slide
+      plusHeroSlides(-1);
+    }
+  }
+}
+
+// Initialize slideshow when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initHeroSlideshow);
+} else {
+  initHeroSlideshow();
+}
+
+// ============================================
+// Dark Mode Toggle
+// ============================================
+const darkModeToggle = document.getElementById('darkModeToggle');
+const htmlElement = document.documentElement;
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+htmlElement.setAttribute('data-theme', currentTheme);
+
+// Function to toggle theme
+function toggleTheme() {
+  const currentTheme = htmlElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  htmlElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+}
+
+// Add event listener to toggle button
+if (darkModeToggle) {
+  darkModeToggle.addEventListener('click', toggleTheme);
+}
+
+// ============================================
 // Console Welcome Message
 // ============================================
 console.log('%cTherapy Platform Compare', 'color: #6366F1; font-size: 20px; font-weight: bold;');
