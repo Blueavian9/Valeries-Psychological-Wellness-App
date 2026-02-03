@@ -4,7 +4,7 @@ A modern, responsive website comparing the top 7 online therapy booking platform
 
 ## 🌐 Live Demo
 
-[View Live Site](https://blueavian9.github.io/Valeries-Psychological-Wellness-App/) *(update after deployment)*
+[View Live Site](https://blueavian9.github.io/valeries-psychological-wellness/) *(update after deployment)*
 
 ## 📋 About
 
@@ -36,7 +36,7 @@ This website helps users find the perfect online therapy platform by providing:
 ## 📂 Project Structure
 
 ```
-Valeries-Psychological-Wellness/
+valeries-psychological-wellness/
 ├── index.html          # Main HTML file
 ├── css/
 │   └── styles.css      # All styles
@@ -57,12 +57,12 @@ Valeries-Psychological-Wellness/
 
 1. Clone this repository
    ```bash
-   git clone https://github.com/Blueavian9/Valeries-Psychological-Wellness-App.git
+   git clone https://github.com/Blueavian9/valeries-psychological-wellness.git
    ```
 
 2. Open the project folder
    ```bash
-   cd Valeries-Psychological-Wellness
+   cd valeries-psychological-wellness
    ```
 
 3. Open `index.html` in your browser
@@ -77,7 +77,7 @@ Valeries-Psychological-Wellness/
 **Option 1: Via Vercel Website (Easiest)**
 1. Go to [vercel.com](https://vercel.com) and sign up/login (use GitHub account)
 2. Click "Add New Project"
-3. Import your GitHub repository: `Valeries-Psychological-Wellness`
+3. Import your GitHub repository: `valeries-psychological-wellness`
 4. Vercel will auto-detect it as a static site
 5. Click "Deploy" (no build settings needed)
 6. Your site will be live in ~30 seconds!
