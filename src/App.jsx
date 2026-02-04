@@ -5,6 +5,9 @@ import Hero from './components/Hero'
 import Stats from './components/Stats'
 import Features from './components/Features'
 import PlatformComparison from './components/PlatformComparison'
+import Testimonials from './components/Testimonials'
+import FAQ from './components/FAQ'
+import ContactCTA from './components/ContactCTA'
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
                 <Stats />
                 <Features />
                 <PlatformComparison />
+                <Testimonials />
+                <FAQ />
+                <ContactCTA />
               </>
             } />
           </Routes>
