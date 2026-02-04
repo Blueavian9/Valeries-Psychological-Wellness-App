@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import { ChevronDown, HelpCircle } from 'lucide-react'
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null)
@@ -7,6 +7,7 @@ export default function FAQ() {
   const faqs = [
     {
       category: "About Holistic Therapy",
+      icon: "🌿",
       questions: [
         {
           question: "What is holistic therapy?",
@@ -24,6 +25,7 @@ export default function FAQ() {
     },
     {
       category: "Platform Usage",
+      icon: "💻",
       questions: [
         {
           question: "How does online therapy work?",
@@ -41,6 +43,7 @@ export default function FAQ() {
     },
     {
       category: "Pricing & Insurance",
+      icon: "💳",
       questions: [
         {
           question: "How much does holistic therapy cost?",
@@ -58,6 +61,7 @@ export default function FAQ() {
     },
     {
       category: "Getting Started",
+      icon: "🚀",
       questions: [
         {
           question: "How do I choose the right platform?",
@@ -81,11 +85,14 @@ export default function FAQ() {
   }
 
   return (
-    <section id="faq" className="py-20 bg-white">
+    <section id="faq" className="py-24 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl mb-6 shadow-lg">
+            <HelpCircle className="text-white" size={32} />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-gray-600">
@@ -94,13 +101,16 @@ export default function FAQ() {
         </div>
 
         {/* FAQ Categories */}
-        <div className="space-y-8">
+        <div className="space-y-12">
           {faqs.map((category, categoryIndex) => (
-            <div key={categoryIndex}>
+            <div key={categoryIndex} className="animate-fade-in" style={{ animationDelay: `${categoryIndex * 100}ms` }}>
               {/* Category Header */}
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                {category.category}
-              </h3>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="text-3xl">{category.icon}</span>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {category.category}
+                </h3>
+              </div>
 
               {/* Questions */}
               <div className="space-y-4">
@@ -111,31 +121,34 @@ export default function FAQ() {
                   return (
                     <div 
                       key={questionIndex}
-                      className="border border-gray-200 rounded-lg overflow-hidden"
+                      className="group border-2 border-gray-200 rounded-xl overflow-hidden hover:border-green-300 transition-all duration-300"
                     >
                       {/* Question */}
                       <button
                         onClick={() => toggleQuestion(categoryIndex, questionIndex)}
-                        className="w-full px-6 py-4 text-left bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center"
+                        className="w-full px-6 py-5 text-left bg-gradient-to-r from-gray-50 to-white hover:from-green-50 hover:to-blue-50 transition-all duration-300 flex justify-between items-center gap-4"
                       >
-                        <span className="font-semibold text-gray-900 pr-8">
+                        <span className="font-semibold text-gray-900 pr-8 text-lg">
                           {faq.question}
                         </span>
-                        {isOpen ? (
-                          <ChevronUp className="text-green-600 flex-shrink-0" size={20} />
-                        ) : (
-                          <ChevronDown className="text-gray-400 flex-shrink-0" size={20} />
-                        )}
+                        <ChevronDown 
+                          className={`text-green-600 flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                          size={24}
+                        />
                       </button>
 
                       {/* Answer */}
-                      {isOpen && (
-                        <div className="px-6 py-4 bg-white">
+                      <div 
+                        className={`overflow-hidden transition-all duration-300 ${
+                          isOpen ? 'max-h-96' : 'max-h-0'
+                        }`}
+                      >
+                        <div className="px-6 py-5 bg-white border-t-2 border-gray-100">
                           <p className="text-gray-700 leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>
-                      )}
+                      </div>
                     </div>
                   )
                 })}
@@ -145,13 +158,13 @@ export default function FAQ() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 mb-4">
+        <div className="mt-16 text-center p-8 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl shadow-lg">
+          <p className="text-lg text-gray-700 mb-6">
             Still have questions?
           </p>
           <a 
             href="#contact" 
-            className="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition"
+            className="inline-block bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             Contact Us
           </a>

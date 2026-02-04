@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Mail, Phone, Send, CheckCircle } from 'lucide-react'
+import { Mail, Phone, Send, CheckCircle, MapPin } from 'lucide-react'
 
 export default function ContactCTA() {
   const [formData, setFormData] = useState({
@@ -18,7 +18,6 @@ export default function ContactCTA() {
       ...prev,
       [name]: value
     }))
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }))
     }
@@ -51,11 +50,9 @@ export default function ContactCTA() {
     e.preventDefault()
     
     if (validateForm()) {
-      // Here you would typically send the form data to a backend
       console.log('Form submitted:', formData)
       setSubmitted(true)
       
-      // Reset form after 3 seconds
       setTimeout(() => {
         setSubmitted(false)
         setFormData({
@@ -70,82 +67,105 @@ export default function ContactCTA() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-green-600 to-blue-600">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="relative py-24 overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-600 via-green-700 to-blue-700"></div>
+      
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-10">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - CTA */}
-          <div className="text-white">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <div className="text-white animate-slide-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Ready to Start Your Healing Journey?
             </h2>
-            <p className="text-xl mb-8 text-green-50">
+            <p className="text-xl mb-8 text-green-50 leading-relaxed">
               Take the first step towards holistic wellness. Our team is here to help you find the perfect therapy platform for your unique needs.
             </p>
 
-            {/* Contact Info */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Mail className="text-green-200" size={24} />
+            {/* Contact Info Cards */}
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm p-4 rounded-xl hover:bg-white/20 transition-all">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Mail className="text-white" size={24} />
+                </div>
                 <div>
-                  <div className="font-semibold">Email Us</div>
-                  <a href="mailto:info@holistictherapy.com" className="text-green-100 hover:text-white">
+                  <div className="font-semibold text-sm text-green-100">Email Us</div>
+                  <a href="mailto:info@holistictherapy.com" className="text-white hover:text-green-100 transition">
                     info@holistictherapy.com
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Phone className="text-green-200" size={24} />
+              <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm p-4 rounded-xl hover:bg-white/20 transition-all">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Phone className="text-white" size={24} />
+                </div>
                 <div>
-                  <div className="font-semibold">Call Us</div>
-                  <a href="tel:+15551234567" className="text-green-100 hover:text-white">
+                  <div className="font-semibold text-sm text-green-100">Call Us</div>
+                  <a href="tel:+15551234567" className="text-white hover:text-green-100 transition">
                     (555) 123-4567
                   </a>
                 </div>
               </div>
+
+              <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm p-4 rounded-xl hover:bg-white/20 transition-all">
+                <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+                  <MapPin className="text-white" size={24} />
+                </div>
+                <div>
+                  <div className="font-semibold text-sm text-green-100">Available Nationwide</div>
+                  <p className="text-white">Serving all 50 states</p>
+                </div>
+              </div>
             </div>
 
-            {/* Trust Badges */}
-            <div className="mt-8 pt-8 border-t border-green-500">
-              <p className="text-green-100 mb-4">Trusted by thousands</p>
-              <div className="flex gap-8">
-                <div>
-                  <div className="text-3xl font-bold">10,000+</div>
-                  <div className="text-green-200 text-sm">Happy Clients</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold">95%</div>
-                  <div className="text-green-200 text-sm">Satisfaction</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold">24/7</div>
-                  <div className="text-green-200 text-sm">Support</div>
-                </div>
+            {/* Trust Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+              <div>
+                <div className="text-3xl font-bold mb-1">10,000+</div>
+                <div className="text-green-100 text-sm">Happy Clients</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">95%</div>
+                <div className="text-green-100 text-sm">Satisfaction</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-1">24/7</div>
+                <div className="text-green-100 text-sm">Support</div>
               </div>
             </div>
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="bg-white rounded-2xl shadow-2xl p-8">
+          <div className="bg-white rounded-3xl shadow-2xl p-8 animate-scale-in">
             {submitted ? (
               // Success Message
               <div className="text-center py-12">
-                <CheckCircle className="text-green-600 mx-auto mb-4" size={64} />
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <CheckCircle className="text-white" size={40} />
+                </div>
+                <h3 className="text-3xl font-bold text-gray-900 mb-3">
                   Thank You!
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-lg">
                   We've received your message and will get back to you within 24 hours.
                 </p>
               </div>
             ) : (
               // Contact Form
               <>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                <h3 className="text-3xl font-bold text-gray-900 mb-2">
                   Send Us a Message
                 </h3>
+                <p className="text-gray-600 mb-8">We typically respond within 24 hours</p>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name */}
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -157,13 +177,13 @@ export default function ContactCTA() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition ${
-                        errors.name ? 'border-red-500' : 'border-gray-300'
+                      className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition ${
+                        errors.name ? 'border-red-500' : 'border-gray-200 hover:border-gray-300'
                       }`}
                       placeholder="Your full name"
                     />
                     {errors.name && (
-                      <p className="mt-1 text-sm text-red-600">{errors.name}</p>
+                      <p className="mt-2 text-sm text-red-600">{errors.name}</p>
                     )}
                   </div>
 
@@ -178,20 +198,20 @@ export default function ContactCTA() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition ${
-                        errors.email ? 'border-red-500' : 'border-gray-300'
+                      className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition ${
+                        errors.email ? 'border-red-500' : 'border-gray-200 hover:border-gray-300'
                       }`}
                       placeholder="your@email.com"
                     />
                     {errors.email && (
-                      <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                      <p className="mt-2 text-sm text-red-600">{errors.email}</p>
                     )}
                   </div>
 
                   {/* Phone (Optional) */}
                   <div>
                     <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Phone (Optional)
+                      Phone <span className="text-gray-400 font-normal">(Optional)</span>
                     </label>
                     <input
                       type="tel"
@@ -199,7 +219,7 @@ export default function ContactCTA() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition hover:border-gray-300"
                       placeholder="(555) 123-4567"
                     />
                   </div>
@@ -215,43 +235,43 @@ export default function ContactCTA() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition resize-none ${
-                        errors.message ? 'border-red-500' : 'border-gray-300'
+                      className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-green-600 focus:border-transparent outline-none transition resize-none ${
+                        errors.message ? 'border-red-500' : 'border-gray-200 hover:border-gray-300'
                       }`}
                       placeholder="How can we help you?"
                     />
                     {errors.message && (
-                      <p className="mt-1 text-sm text-red-600">{errors.message}</p>
+                      <p className="mt-2 text-sm text-red-600">{errors.message}</p>
                     )}
                   </div>
 
                   {/* Preferred Contact Method */}
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label className="block text-sm font-semibold text-gray-700 mb-3">
                       Preferred Contact Method
                     </label>
                     <div className="flex gap-4">
-                      <label className="flex items-center">
+                      <label className="flex items-center cursor-pointer">
                         <input
                           type="radio"
                           name="contactMethod"
                           value="email"
                           checked={formData.contactMethod === 'email'}
                           onChange={handleChange}
-                          className="mr-2 text-green-600 focus:ring-green-600"
+                          className="w-4 h-4 text-green-600 focus:ring-green-600"
                         />
-                        <span className="text-gray-700">Email</span>
+                        <span className="ml-2 text-gray-700">Email</span>
                       </label>
-                      <label className="flex items-center">
+                      <label className="flex items-center cursor-pointer">
                         <input
                           type="radio"
                           name="contactMethod"
                           value="phone"
                           checked={formData.contactMethod === 'phone'}
                           onChange={handleChange}
-                          className="mr-2 text-green-600 focus:ring-green-600"
+                          className="w-4 h-4 text-green-600 focus:ring-green-600"
                         />
-                        <span className="text-gray-700">Phone</span>
+                        <span className="ml-2 text-gray-700">Phone</span>
                       </label>
                     </div>
                   </div>
@@ -259,15 +279,11 @@ export default function ContactCTA() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full bg-green-600 text-white py-4 rounded-lg font-semibold hover:bg-green-700 transition flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-4 rounded-xl font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2"
                   >
                     Send Message
                     <Send size={20} />
                   </button>
-
-                  <p className="text-xs text-gray-500 text-center">
-                    We typically respond within 24 hours
-                  </p>
                 </form>
               </>
             )}
